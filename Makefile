@@ -561,7 +561,7 @@ all: vmlinux
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
-KBUILD_CFLAGS	+= -O2 -mtune=cortex-a8
+KBUILD_CFLAGS	+= -O2 -pipe -mtune=cortex-a8 -mfpu=neon -ffast-math -funroll-loops 
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
